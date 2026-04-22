@@ -128,6 +128,15 @@ body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helveti
 .btn{display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#7af6ff);color:#042033;text-decoration:none;font-weight:600}
 .btn--ghost{background:transparent;border:1px solid rgba(255,255,255,.06);color:var(--accent);margin-left:10px}
 
+.contact-section{padding-bottom:40px;margin-bottom:0}
+.contact-actions{display:flex;flex-direction:column;gap:18px;max-width:420px;margin:0 auto;align-items:center;justify-content:center}
+.contact-btn{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;max-width:360px;padding:16px 18px;border-radius:14px;text-decoration:none;font-weight:700;transition:transform .18s,box-shadow .18s;box-shadow:0 12px 28px rgba(0,0,0,.18);color:#fff}
+.contact-btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(0,0,0,.22)}
+.contact-btn svg{width:24px;height:24px;flex-shrink:0}
+.contact-btn--whatsapp{background:linear-gradient(90deg,#25d366,#128c7e)}
+.contact-btn--linkedin{background:linear-gradient(90deg,#0077b5,#00a0dc)}
+.contact-btn--github{background:linear-gradient(90deg,#24292e,#57606a)}
+
 
 @media (max-width:800px) {
   .hero {

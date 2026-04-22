@@ -32,24 +32,6 @@
             <a class="btn btn--ghost" href="#contact">Contáctame</a>
           </div>
         </div>
-      <!-- ...existing code... -->
-    <!-- Contacto solo al final, fuera del main y antes del cierre del body -->
-    <section id="contact" class="section contact" style="padding-bottom:40px;margin-bottom:0;">
-      <h2 class="section__title" style="text-align:center;">Contacto</h2>
-      <div style="display:flex;flex-direction:column;gap:18px;max-width:400px;margin:0 auto;align-items:center;justify-content:center;">
-        <a href="https://wa.me/50233074483" target="_blank" rel="noopener" class="contact-btn" style="width:100%;max-width:340px;display:flex;align-items:center;gap:14px;justify-content:center;padding:16px 0;background:linear-gradient(90deg,#25d366 60%,#128c7e 100%);color:#fff;font-weight:700;font-size:1.15em;border-radius:12px;text-decoration:none;box-shadow:0 2px 12px rgba(37,211,102,0.12);transition:transform .18s;">
-          <span style="font-size:1.7em;">📱</span> WhatsApp: <span style="font-weight:400">+502 3307 4483</span>
-        </a>
-        <a href="https://www.linkedin.com/in/cristofer-perez-8b4b67140" target="_blank" rel="noopener" class="contact-btn" style="width:100%;max-width:340px;display:flex;align-items:center;gap:14px;justify-content:center;padding:16px 0;background:linear-gradient(90deg,#0077b5 60%,#00c6fb 100%);color:#fff;font-weight:700;font-size:1.15em;border-radius:12px;text-decoration:none;box-shadow:0 2px 12px rgba(0,119,181,0.12);transition:transform .18s;">
-          <span style="font-size:1.7em;">💼</span> LinkedIn: <span style="font-weight:400">cristofer-perez</span>
-        </a>
-        <a href="https://github.com/DancingAlien96" target="_blank" rel="noopener" class="contact-btn" style="width:100%;max-width:340px;display:flex;align-items:center;gap:14px;justify-content:center;padding:16px 0;background:linear-gradient(90deg,#24292e 60%,#57ddff 100%);color:#fff;font-weight:700;font-size:1.15em;border-radius:12px;text-decoration:none;box-shadow:0 2px 12px rgba(36,41,46,0.12);transition:transform .18s;">
-          <span style="font-size:1.7em;">🐙</span> GitHub: <span style="font-weight:400">DancingAlien96</span>
-        </a>
-      </div>
-      <p style="margin-top:24px;color:#b6c6d6;font-size:.98em;text-align:center;">También puedes incluir tu correo o descargar tu CV.</p>
-    </section>
-       
       </header>
 
       <section id="projects" class="section">
@@ -270,7 +252,25 @@
         </div>
       </section>
 
-      
+      <section id="contact" class="section contact contact-section">
+        <h2 class="section__title" style="text-align:center;">Contacto</h2>
+        <div class="contact-actions">
+          <a href="https://wa.me/50233074483" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn--whatsapp">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.672.149-.198.297-.767.967-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.148-.173.198-.297.298-.497.099-.198.05-.372-.025-.521-.074-.148-.672-1.612-.92-2.211C8.103 7.05 7.858 6.97 7.673 6.96c-.173-.008-.372-.01-.57-.01s-.521.074-.794.372c-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.064 2.877 1.213 3.074.149.198 2.095 3.2 5.074 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.693.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.004 2.003C6.481 2.003 2 6.483 2 12.007c0 2.12.65 4.082 1.758 5.71L2 22l4.512-1.181c1.57 1.027 3.406 1.645 5.492 1.645 5.523 0 10.004-4.48 10.004-10.004S17.527 2.003 12.004 2.003z"/></svg>
+            WhatsApp
+          </a>
+          <a href="https://www.linkedin.com/in/cristofer-perez-8b4b67140" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn--linkedin">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.2 24h4.55V7.98H.2V24zM8.98 7.98h4.37v2.24h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 6.99V24h-4.56v-7.75c0-1.85-.03-4.24-2.58-4.24-2.58 0-2.98 2.02-2.98 4.1V24H8.98V7.98z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/DancingAlien96" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn--github">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 .297C5.37.297 0 5.667 0 12.293c0 5.293 3.438 9.785 8.205 11.385.6.113.82-.258.82-.577 0-.286-.01-1.043-.015-2.047-3.338.724-4.042-1.613-4.042-1.613-.546-1.387-1.333-1.757-1.333-1.757-1.09-.744.083-.729.083-.729 1.205.085 1.84 1.256 1.84 1.256 1.07 1.835 2.807 1.305 3.492.998.108-.776.42-1.305.762-1.605-2.665-.3-5.466-1.335-5.466-5.933 0-1.31.468-2.381 1.235-3.222-.124-.303-.535-1.523.117-3.176 0 0 1.008-.323 3.3 1.23.957-.266 1.98-.399 3-.405 1.02.006 2.043.139 3 .405 2.28-1.553 3.285-1.23 3.285-1.23.655 1.653.244 2.873.12 3.176.77.841 1.235 1.912 1.235 3.222 0 4.61-2.807 5.63-5.48 5.922.43.37.81 1.102.81 2.222 0 1.606-.015 2.897-.015 3.293 0 .32.21.694.825.576C20.565 22.077 24 17.588 24 12.293 24 5.667 18.627.297 12 .297z"/></svg>
+            GitHub
+          </a>
+        </div>
+        <p style="margin-top:24px;color:#b6c6d6;font-size:.98em;text-align:center;">También puedes incluir tu correo o descargar tu CV.</p>
+      </section>
+
     </main>
 
     <script src="script.js"></script>

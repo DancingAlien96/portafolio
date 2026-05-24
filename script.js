@@ -1,8 +1,8 @@
 const phrases = [
   'Hola — bienvenido a mi portafolio',
-  'Desarrollador Web • React, Angular, Node.js',
-  'Desarrollador Mobile • Kotlin, Flutter',
-  'Ingeniería en Ciencias y Sistemas',
+  'Desarrollador Full Stack',
+  'Web • React, Angular, Node.js',
+  'Mobile • Kotlin, Flutter',
   'Construyo productos con foco en UX y rendimiento'
 ]
 

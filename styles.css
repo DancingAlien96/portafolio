@@ -55,9 +55,9 @@ body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helveti
 
 .hero__actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
 
-.prompt{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,monospace;color:var(--accent);white-space:nowrap;overflow:hidden}
-.text{display:inline-block;min-width:10ch}
-.cursor{margin-left:6px;opacity:.9}
+.prompt{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,monospace;color:var(--accent);white-space:nowrap;overflow:hidden;max-width:100%;min-height:1.6em;font-size:1rem;word-break:keep-all}
+.text{display:inline;min-width:0;overflow-wrap:break-word}
+.cursor{margin-left:4px;opacity:.9;display:inline-block}
 
 .hero__avatar{width:240px;display:flex;justify-content:center;position:relative}
 .avatar{position:relative}
@@ -182,6 +182,13 @@ body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helveti
 
 @media (max-width:800px) {
   body { padding: 16px; }
+  .prompt {
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    font-size: 0.92rem;
+    min-height: 2.4em;
+  }
   .hero {
     flex-direction: column;
     text-align: center;

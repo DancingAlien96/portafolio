@@ -28,8 +28,8 @@ function createCircuitElements(){
   const container = document.getElementById('circuitBg')
   if(!container) return
   
-  const lineCount = 20
-  const nodeCount = 30
+  const lineCount = 10
+  const nodeCount = 14
   
   // Create lines
   for(let i=0; i<lineCount; i++){
@@ -66,9 +66,10 @@ function createCircuitElements(){
   }
 }
 
-// Scroll reveal: aplica .reveal a secciones/tarjetas y las activa al entrar al viewport
+// Scroll reveal: anima solo tarjetas/items internos (no las .section completas)
+// para que el título de la sección nunca aparezca sobre un espacio vacío.
 function setupScrollReveal(){
-  const targets = document.querySelectorAll('.section, .project-card, .achievement-card, .timeline__item, .stack-group')
+  const targets = document.querySelectorAll('.project-card, .achievement-card, .timeline__item, .stack-group')
   targets.forEach(el => el.classList.add('reveal'))
 
   if(!('IntersectionObserver' in window)){
@@ -83,7 +84,7 @@ function setupScrollReveal(){
         io.unobserve(entry.target)
       }
     })
-  }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'})
+  }, {threshold: 0.05, rootMargin: '0px 0px 80px 0px'})
 
   targets.forEach(el => io.observe(el))
 }

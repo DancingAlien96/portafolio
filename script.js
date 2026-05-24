@@ -1,7 +1,9 @@
 const phrases = [
   'Hola — bienvenido a mi portafolio',
-  'Desarrollador Frontend • React, Next.js',
-  'Me encanta optimizar UX y rendimiento'
+  'Desarrollador Web • React, Angular, Node.js',
+  'Desarrollador Mobile • Kotlin, Flutter',
+  'Ingeniería en Ciencias y Sistemas',
+  'Construyo productos con foco en UX y rendimiento'
 ]
 
 const el = document.getElementById('typing')
@@ -64,7 +66,30 @@ function createCircuitElements(){
   }
 }
 
+// Scroll reveal: aplica .reveal a secciones/tarjetas y las activa al entrar al viewport
+function setupScrollReveal(){
+  const targets = document.querySelectorAll('.section, .project-card, .achievement-card, .timeline__item, .stack-group')
+  targets.forEach(el => el.classList.add('reveal'))
+
+  if(!('IntersectionObserver' in window)){
+    targets.forEach(el => el.classList.add('is-visible'))
+    return
+  }
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible')
+        io.unobserve(entry.target)
+      }
+    })
+  }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'})
+
+  targets.forEach(el => io.observe(el))
+}
+
 document.addEventListener('DOMContentLoaded', ()=>{
   step()
   createCircuitElements()
+  setupScrollReveal()
 })

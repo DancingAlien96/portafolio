@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Building2, Code2, Cpu, GraduationCap } from 'lucide-react'
+import { Building2, Code2, Cpu, GraduationCap, Server } from 'lucide-react'
 import { SectionTitle } from '@/components/section-title'
 import { RadialOrbitalTimeline, type OrbitalItem } from '@/components/ui/radial-orbital-timeline'
 import { experience, type Job } from '@/data/portfolio'
@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 
 const icons: Record<Job['icon'], OrbitalItem['icon']> = {
   building: Building2,
+  server: Server,
   code: Code2,
   school: GraduationCap,
   cpu: Cpu,

@@ -3,20 +3,25 @@ import {
   CalendarDays,
   Car,
   CreditCard,
+  Download,
   Landmark,
+  LayoutGrid,
   Link2,
+  MessageCircle,
   GraduationCap,
   Network,
   Package,
   Plane,
   Presentation,
   ShoppingCart,
+  SlidersHorizontal,
   Smartphone,
   Users,
   Workflow,
   type LucideIcon,
 } from 'lucide-react'
 import ecodama from '@/assets/ecodama.webp'
+import habitio from '@/assets/habitio.webp'
 import aquaequipos from '@/assets/aquaequipos.webp'
 import vehiculos from '@/assets/vehiculos.webp'
 import movilidad from '@/assets/movilidad.webp'
@@ -63,6 +68,8 @@ export const stack: StackGroup[] = [
       { name: 'Next.js', icon: icon('nextdotjs', 'ffffff') },
       { name: 'Node.js', icon: icon('nodedotjs', '339933') },
       { name: 'Express', icon: icon('express', 'ffffff') },
+      { name: 'Python', icon: icon('python', '3776AB') },
+      { name: 'MUI', icon: icon('mui', '007FFF') },
       { name: 'JavaScript', icon: icon('javascript', 'F7DF1E') },
       { name: 'TypeScript', icon: icon('typescript', '3178C6') },
       { name: 'HTML5', icon: icon('html5', 'E34F26') },
@@ -144,6 +151,21 @@ export const projects: Project[] = [
       'Desarrollé la solución completa desde cero —backend, frontend y base de datos—, implementando pasarelas de pago seguras y optimizando la experiencia de usuario para maximizar conversiones.',
     // Agrega aquí enlaces a demo o repositorio, p. ej. { label: 'Ver sitio', href: 'https://…' }
     links: [],
+  },
+  {
+    title: 'Habitio Design',
+    meta: 'Sitio en producción · Catálogo de planos arquitectónicos',
+    image: habitio,
+    tech: ['Next.js', 'React', 'Tailwind CSS', 'Nginx'],
+    summary:
+      'Plataforma para la venta de planos arquitectónicos listos para construir. Los clientes exploran la galería, filtran los diseños según lo que necesitan y revisan el detalle y precio de cada plano.',
+    features: [
+      { icon: LayoutGrid, text: 'Galería de planos con fichas de detalle y precio' },
+      { icon: SlidersHorizontal, text: 'Filtros por estilo, pisos, tamaño y dormitorios' },
+      { icon: Download, text: 'Entrega de planos en formato digital' },
+      { icon: MessageCircle, text: 'Contacto directo por WhatsApp para personalizaciones' },
+    ],
+    links: [{ label: 'Visitar habitiodesign.com', href: 'https://www.habitiodesign.com' }],
   },
   {
     title: 'Sistema de Solicitud y Gestión de Vehículos CUNORI',
@@ -237,12 +259,24 @@ export type Job = {
   description: string
   skills?: string[]
   current?: boolean
-  icon: 'building' | 'code' | 'school' | 'cpu'
+  icon: 'building' | 'server' | 'code' | 'school' | 'cpu'
   relatedIds: number[]
 }
 
 // Del más reciente al más antiguo
 export const experience: Job[] = [
+  {
+    id: 5,
+    title: 'Desarrollador Full Stack',
+    company: 'Click',
+    period: 'Actualmente',
+    current: true,
+    icon: 'server',
+    description:
+      'Desarrollo full stack en empresa de tecnología. Participo en la migración de un sistema a una nueva arquitectura con Next.js y Material UI en el frontend y Python en el backend.',
+    skills: ['Next.js', 'React', 'MUI', 'Python'],
+    relatedIds: [1],
+  },
   {
     id: 1,
     title: 'Desarrollador Full Stack',
@@ -253,7 +287,7 @@ export const experience: Job[] = [
     description:
       'Desarrollo y mantenimiento de la plataforma de comercio electrónico de la empresa: backend, frontend y base de datos. Integración de pasarelas de pago, gestión de catálogo y optimización de la experiencia de compra.',
     skills: ['React', 'Node.js', 'MySQL', 'TiloPay'],
-    relatedIds: [2],
+    relatedIds: [5, 2],
   },
   {
     id: 2,

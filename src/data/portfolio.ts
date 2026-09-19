@@ -5,14 +5,18 @@ import {
   CreditCard,
   Download,
   Landmark,
+  Languages,
   LayoutGrid,
   Link2,
+  ListChecks,
   MessageCircle,
+  Globe,
   GraduationCap,
   Network,
   Package,
   Plane,
   Presentation,
+  Receipt,
   ShoppingCart,
   SlidersHorizontal,
   Smartphone,
@@ -21,8 +25,13 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import ecodama from '@/assets/ecodama.webp'
+import ecodamaMobile from '@/assets/ecodama-mobile.webp'
 import habitio from '@/assets/habitio.webp'
+import habitioMobile from '@/assets/habitio-mobile.webp'
+import plenha from '@/assets/plenha.webp'
+import plenhaMobile from '@/assets/plenha-mobile.webp'
 import aquaequipos from '@/assets/aquaequipos.webp'
+import aquaequiposMobile from '@/assets/aquaequipos-mobile.webp'
 import vehiculos from '@/assets/vehiculos.webp'
 import movilidad from '@/assets/movilidad.webp'
 import tallercunori from '@/assets/tallercunori.webp'
@@ -109,6 +118,8 @@ export type Project = {
   title: string
   meta: string
   image: string
+  /** Captura en vista móvil; se muestra dentro de un marco de teléfono */
+  mobileImage?: string
   tech: string[]
   summary: string
   features: { icon: LucideIcon; text: string }[]
@@ -121,6 +132,7 @@ export const projects: Project[] = [
     title: 'EcoDama',
     meta: 'SaaS en producción · Reservas para salones de belleza',
     image: ecodama,
+    mobileImage: ecodamaMobile,
     tech: ['Next.js', 'React', 'Tailwind CSS', 'Nginx'],
     summary:
       'Plataforma SaaS de citas para salones, spas y profesionales de la belleza. Cada salón obtiene su propia página de reservas, cobra anticipos y gestiona su agenda y clientas desde un panel administrativo.',
@@ -138,6 +150,7 @@ export const projects: Project[] = [
     title: 'Ecommerce Aqua Equipos',
     meta: 'Desarrollo Full Stack · E-commerce',
     image: aquaequipos,
+    mobileImage: aquaequiposMobile,
     tech: ['React', 'Node.js', 'TiloPay', 'MySQL'],
     summary:
       'Plataforma de comercio electrónico para Aqua Equipos, especializada en la venta de bombas de agua y productos relacionados. Los clientes exploran el catálogo completo, realizan pedidos y pagan de forma segura.',
@@ -149,13 +162,13 @@ export const projects: Project[] = [
     ],
     detail:
       'Desarrollé la solución completa desde cero —backend, frontend y base de datos—, implementando pasarelas de pago seguras y optimizando la experiencia de usuario para maximizar conversiones.',
-    // Agrega aquí enlaces a demo o repositorio, p. ej. { label: 'Ver sitio', href: 'https://…' }
-    links: [],
+    links: [{ label: 'Visitar aquaequipos.com', href: 'https://www.aquaequipos.com' }],
   },
   {
     title: 'Habitio Design',
     meta: 'Sitio en producción · Catálogo de planos arquitectónicos',
     image: habitio,
+    mobileImage: habitioMobile,
     tech: ['Next.js', 'React', 'Tailwind CSS', 'Nginx'],
     summary:
       'Plataforma para la venta de planos arquitectónicos listos para construir. Los clientes exploran la galería, filtran los diseños según lo que necesitan y revisan el detalle y precio de cada plano.',
@@ -166,6 +179,22 @@ export const projects: Project[] = [
       { icon: MessageCircle, text: 'Contacto directo por WhatsApp para personalizaciones' },
     ],
     links: [{ label: 'Visitar habitiodesign.com', href: 'https://www.habitiodesign.com' }],
+  },
+  {
+    title: 'Plenha Nutrition',
+    meta: 'Sitio en producción · Asesoría nutricional online',
+    image: plenha,
+    mobileImage: plenhaMobile,
+    tech: ['Next.js', 'React', 'Tailwind CSS'],
+    summary:
+      'Sitio de asesoría nutricional online con sistema de citas propio. Los pacientes eligen su consulta, dejan sus datos, suben el comprobante de pago y reservan su horario en un flujo guiado de cuatro pasos.',
+    features: [
+      { icon: ListChecks, text: 'Reserva de citas guiada en cuatro pasos' },
+      { icon: Receipt, text: 'Pago por transferencia con carga de comprobante' },
+      { icon: Globe, text: 'Precios en quetzales o dólares según el país' },
+      { icon: Languages, text: 'Sitio bilingüe en español e inglés' },
+    ],
+    links: [{ label: 'Visitar plenhanutrition.com', href: 'https://www.plenhanutrition.com' }],
   },
   {
     title: 'Sistema de Solicitud y Gestión de Vehículos CUNORI',

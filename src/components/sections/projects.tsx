@@ -2,6 +2,7 @@ import { ExternalLink } from 'lucide-react'
 import { motion } from 'motion/react'
 import { SectionTitle } from '@/components/section-title'
 import { ContainerScroll } from '@/components/ui/container-scroll-animation'
+import { PhoneFrame } from '@/components/ui/phone-frame'
 import { SpotlightCard } from '@/components/ui/spotlight-card'
 import { projects, type Project } from '@/data/portfolio'
 
@@ -59,6 +60,15 @@ export function Projects() {
       {/* Proyecto principal con la animación de pantalla 3D al hacer scroll */}
       <div className="-mt-20 md:-mt-24">
         <ContainerScroll
+          overlay={
+            featured.mobileImage && (
+              <PhoneFrame
+                src={featured.mobileImage}
+                alt={`Vista móvil de ${featured.title}`}
+                className="absolute -bottom-6 right-[4%] w-[19%] md:-bottom-10"
+              />
+            )
+          }
           titleComponent={
             <p className="mb-4 font-mono text-sm text-accent md:text-base">
               <span className="text-muted">~/proyectos/</span>
@@ -90,13 +100,22 @@ export function Projects() {
             transition={{ duration: 0.45 }}
           >
             <SpotlightCard className="p-5 md:p-7">
-              <div className="mb-6 overflow-hidden rounded-xl shadow-[0_8px_24px_rgb(0_0_0/0.3)]">
-                <img
-                  src={project.image}
-                  alt={`Captura de ${project.title}`}
-                  loading="lazy"
-                  className="w-full transition duration-300 group-hover/spot:scale-[1.02]"
-                />
+              <div className={project.mobileImage ? 'relative mb-10 md:mb-12' : 'mb-6'}>
+                <div className="overflow-hidden rounded-xl shadow-[0_8px_24px_rgb(0_0_0/0.3)]">
+                  <img
+                    src={project.image}
+                    alt={`Captura de ${project.title}`}
+                    loading="lazy"
+                    className="w-full transition duration-300 group-hover/spot:scale-[1.02]"
+                  />
+                </div>
+                {project.mobileImage && (
+                  <PhoneFrame
+                    src={project.mobileImage}
+                    alt={`Vista móvil de ${project.title}`}
+                    className="absolute -bottom-6 right-3 w-[22%] max-w-[180px] transition duration-300 group-hover/spot:-translate-y-1.5 md:-bottom-8 md:right-6"
+                  />
+                )}
               </div>
               <ProjectBody project={project} />
             </SpotlightCard>

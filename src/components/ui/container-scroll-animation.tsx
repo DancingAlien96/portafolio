@@ -6,9 +6,12 @@ import { motion, useScroll, useTransform, type MotionValue } from 'motion/react'
 export function ContainerScroll({
   titleComponent,
   children,
+  overlay,
 }: {
   titleComponent: ReactNode
   children: ReactNode
+  /** Elemento que sobresale de la pantalla y gira con ella (p. ej. la vista móvil) */
+  overlay?: ReactNode
 }) {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ target: containerRef })
@@ -34,7 +37,7 @@ export function ContainerScroll({
         <motion.div style={{ translateY: translate }} className="mx-auto max-w-5xl text-center">
           {titleComponent}
         </motion.div>
-        <Card rotate={rotate} scale={scale}>
+        <Card rotate={rotate} scale={scale} overlay={overlay}>
           {children}
         </Card>
       </div>
@@ -46,10 +49,12 @@ function Card({
   rotate,
   scale,
   children,
+  overlay,
 }: {
   rotate: MotionValue<number>
   scale: MotionValue<number>
   children: ReactNode
+  overlay?: ReactNode
 }) {
   return (
     <motion.div
@@ -59,9 +64,10 @@ function Card({
         boxShadow:
           '0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003',
       }}
-      className="mx-auto -mt-8 w-full max-w-5xl rounded-[24px] border-4 border-[#3a4655] bg-[#141b27] p-2 md:rounded-[30px] md:p-4"
+      className="relative mx-auto -mt-8 w-full max-w-5xl rounded-[24px] border-4 border-[#3a4655] bg-[#141b27] p-2 md:rounded-[30px] md:p-4"
     >
       <div className="aspect-video w-full overflow-hidden rounded-2xl bg-bg-1">{children}</div>
+      {overlay}
     </motion.div>
   )
 }

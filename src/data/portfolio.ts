@@ -235,7 +235,10 @@ export const projects: Project[] = [
       { icon: LockKeyhole, text: 'Acceso con credenciales para estudiantes y personal' },
       { icon: ShieldCheck, text: 'Sistema administrativo en servidor propio' },
     ],
-    links: [{ label: 'Ir al campus', href: 'https://admin.enfermeriacarmenmaria.edu.gt/login' }],
+    links: [
+      { label: 'Visitar el sitio de la escuela', href: 'https://enfermeriacarmenmaria.edu.gt' },
+      { label: 'Ir al campus', href: 'https://admin.enfermeriacarmenmaria.edu.gt/login' },
+    ],
   },
   {
     title: 'Sistema de Solicitud y Gestión de Vehículos CUNORI',

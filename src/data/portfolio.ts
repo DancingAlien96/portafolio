@@ -304,9 +304,9 @@ export const achievements: Achievement[] = [
     issuer: 'USAC · Coordinadora General de Cooperación y Relaciones Internacionales',
     icon: Plane,
     image: movilidad,
-    summary: 'Representé a mi universidad en un programa académico de carácter internacional.',
+    summary: 'Representé a mi universidad en un programa académico internacional en el país hermano de Honduras.',
     detail:
-      'La distinción destaca mi capacidad para representar a mi institución en espacios globales, aportando conocimiento, disciplina y una visión orientada a la colaboración internacional. Refleja competencias como liderazgo, adaptabilidad y compromiso con estándares académicos de alto nivel, y mi interés en generar impacto más allá del entorno local.',
+      'Durante la movilidad en Honduras representé a la Universidad de San Carlos de Guatemala. La distinción destaca mi capacidad para representar a mi institución en espacios globales, aportando conocimiento, disciplina y una visión orientada a la colaboración internacional. Refleja competencias como liderazgo, adaptabilidad y compromiso con estándares académicos de alto nivel, y mi interés en generar impacto más allá del entorno local.',
   },
   {
     title: 'Facilitador de Taller de Automatización',

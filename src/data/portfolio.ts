@@ -1,13 +1,17 @@
 import {
   BarChart3,
+  Bell,
+  Building,
   CalendarDays,
   Car,
   CreditCard,
   Download,
+  FileText,
   Landmark,
   Languages,
   LayoutGrid,
   Link2,
+  LockKeyhole,
   ListChecks,
   MessageCircle,
   Globe,
@@ -17,6 +21,7 @@ import {
   Plane,
   Presentation,
   Receipt,
+  ShieldCheck,
   ShoppingCart,
   SlidersHorizontal,
   Smartphone,
@@ -24,6 +29,10 @@ import {
   Workflow,
   type LucideIcon,
 } from 'lucide-react'
+import terragroup from '@/assets/terragroup.webp'
+import terragroupMobile from '@/assets/terragroup-mobile.webp'
+import campus from '@/assets/campus-carmen-maria.webp'
+import campusMobile from '@/assets/campus-carmen-maria-mobile.webp'
 import ecodama from '@/assets/ecodama.webp'
 import ecodamaMobile from '@/assets/ecodama-mobile.webp'
 import habitio from '@/assets/habitio.webp'
@@ -147,6 +156,24 @@ export const projects: Project[] = [
     links: [{ label: 'Visitar ecodama.online', href: 'https://ecodama.online' }],
   },
   {
+    title: 'TerraGroup',
+    meta: 'SaaS en producción · Cobranza para lotificaciones',
+    image: terragroup,
+    mobileImage: terragroupMobile,
+    tech: ['Next.js', 'React', 'Tailwind CSS', 'PWA'],
+    summary:
+      'Sistema de cobranza y administración para empresas de lotificación. Centraliza la cartera de lotes y propietarios, el registro de pagos, los reportes financieros y las comisiones de vendedores en una sola plataforma multiempresa.',
+    features: [
+      { icon: Receipt, text: 'Control de pagos con recibos automáticos e historial por propietario' },
+      { icon: Bell, text: 'Recordatorios de pago por WhatsApp y correo' },
+      { icon: FileText, text: 'Reportes financieros exportables a PDF' },
+      { icon: Building, text: 'Multiempresa con entornos aislados, roles y permisos' },
+    ],
+    detail:
+      'Instalable como aplicación en el celular (PWA), con dashboard en tiempo real del estado de la cartera y cálculo automático de comisiones por vendedor.',
+    links: [{ label: 'Visitar TerraGroup', href: 'https://terragroup.urbandata.app' }],
+  },
+  {
     title: 'Ecommerce Aqua Equipos',
     meta: 'Desarrollo Full Stack · E-commerce',
     image: aquaequipos,
@@ -197,6 +224,20 @@ export const projects: Project[] = [
     links: [{ label: 'Visitar plenhanutrition.com', href: 'https://www.plenhanutrition.com' }],
   },
   {
+    title: 'Campus Escuela de Enfermería Carmen María',
+    meta: 'Sistema en producción · Plataforma académica',
+    image: campus,
+    mobileImage: campusMobile,
+    tech: ['Next.js', 'React', 'Tailwind CSS', 'Nginx'],
+    summary:
+      'Campus y sistema administrativo para los estudiantes y el personal de la Escuela Privada de Auxiliares de Enfermería Carmen María, accesible desde el sitio oficial de la escuela.',
+    features: [
+      { icon: LockKeyhole, text: 'Acceso con credenciales para estudiantes y personal' },
+      { icon: ShieldCheck, text: 'Sistema administrativo en servidor propio' },
+    ],
+    links: [{ label: 'Ir al campus', href: 'https://admin.enfermeriacarmenmaria.edu.gt/login' }],
+  },
+  {
     title: 'Sistema de Solicitud y Gestión de Vehículos CUNORI',
     meta: 'Desarrollo Full Stack · Sistema Académico',
     image: vehiculos,
@@ -228,7 +269,6 @@ export const achievements: Achievement[] = [
     title: 'Cierre de Pensum — Ingeniería en Ciencias y Sistemas',
     issuer: 'Universidad de San Carlos de Guatemala · CUNORI',
     icon: GraduationCap,
-    date: 'Noviembre 2025',
     summary: 'Completé la totalidad de cursos de la carrera de Ingeniería en Ciencias y Sistemas.',
     detail:
       'Constancia de cierre de pensum emitida por Control Académico del Centro Universitario de Oriente, que acredita el cumplimiento de todos los requisitos académicos de la carrera de Ingeniería en Ciencias y Sistemas a nivel de grado.',

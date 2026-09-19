@@ -9,7 +9,6 @@ Varios componentes están basados en la comunidad de [21st.dev](https://21st.dev
 | Componente | Archivo | Sección |
 |---|---|---|
 | Morphing Scroll Navbar | `src/components/ui/morphing-navbar.tsx` | Menú superior |
-| Container Scroll Animation | `src/components/ui/container-scroll-animation.tsx` | Proyecto destacado |
 | Spotlight Card | `src/components/ui/spotlight-card.tsx` | Stack y proyectos |
 | Bento Grid | `src/components/ui/bento-grid.tsx` | Reconocimientos |
 | Radial Orbital Timeline | `src/components/ui/radial-orbital-timeline.tsx` | Experiencia (escritorio) |

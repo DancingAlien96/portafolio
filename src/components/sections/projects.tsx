@@ -1,7 +1,6 @@
 import { ExternalLink } from 'lucide-react'
 import { motion } from 'motion/react'
 import { SectionTitle } from '@/components/section-title'
-import { ContainerScroll } from '@/components/ui/container-scroll-animation'
 import { PhoneFrame } from '@/components/ui/phone-frame'
 import { SpotlightCard } from '@/components/ui/spotlight-card'
 import { projects, type Project } from '@/data/portfolio'
@@ -51,47 +50,12 @@ function ProjectBody({ project }: { project: Project }) {
 }
 
 export function Projects() {
-  const [featured, ...rest] = projects
-
   return (
-    <section id="projects" className="px-4 pt-10 md:px-6">
+    <section id="projects" className="px-4 py-10 md:px-6">
       <SectionTitle>Proyectos destacados</SectionTitle>
 
-      {/* Proyecto principal con la animación de pantalla 3D al hacer scroll */}
-      <div className="-mt-20 md:-mt-24">
-        <ContainerScroll
-          overlay={
-            featured.mobileImage && (
-              <PhoneFrame
-                src={featured.mobileImage}
-                alt={`Vista móvil de ${featured.title}`}
-                className="absolute -bottom-6 right-[4%] w-[19%] md:-bottom-10"
-              />
-            )
-          }
-          titleComponent={
-            <p className="mb-4 font-mono text-sm text-accent md:text-base">
-              <span className="text-muted">~/proyectos/</span>
-              {featured.title.toLowerCase().replace(/\s+/g, '-')}
-            </p>
-          }
-        >
-          <img
-            src={featured.image}
-            alt={`Captura de ${featured.title}`}
-            className="size-full object-cover object-top"
-            loading="lazy"
-            draggable={false}
-          />
-        </ContainerScroll>
-      </div>
-
-      <div className="-mt-16 space-y-5 sm:-mt-10 md:-mt-24">
-        <SpotlightCard className="p-5 md:p-7">
-          <ProjectBody project={featured} />
-        </SpotlightCard>
-
-        {rest.map((project) => (
+      <div className="space-y-5">
+        {projects.map((project) => (
           <motion.div
             key={project.title}
             initial={{ opacity: 0, y: 12 }}

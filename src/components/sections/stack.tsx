@@ -1,4 +1,4 @@
-import { Monitor, Smartphone, Wrench } from 'lucide-react'
+import { Monitor, Move, Smartphone, Wrench } from 'lucide-react'
 import { motion } from 'motion/react'
 import { SectionTitle } from '@/components/section-title'
 import { IconCloud } from '@/components/ui/icon-cloud'
@@ -26,7 +26,9 @@ export function Stack() {
       >
         <div className="pointer-events-none absolute inset-[18%] rounded-full bg-accent/10 blur-3xl" />
         <IconCloud icons={cloudIcons} className="relative" />
-        <p className="-mt-2 text-center font-mono text-xs text-muted">↻ arrastra la esfera</p>
+        <p className="-mt-2 flex items-center justify-center gap-1.5 font-mono text-xs text-muted">
+          <Move size={12} /> arrastra la esfera
+        </p>
       </motion.div>
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {stack.map((group, i) => {

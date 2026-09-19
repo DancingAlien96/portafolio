@@ -1,3 +1,22 @@
+import {
+  BarChart3,
+  CalendarDays,
+  Car,
+  CreditCard,
+  Landmark,
+  Link2,
+  GraduationCap,
+  Network,
+  Package,
+  Plane,
+  Presentation,
+  ShoppingCart,
+  Smartphone,
+  Users,
+  Workflow,
+  type LucideIcon,
+} from 'lucide-react'
+import ecodama from '@/assets/ecodama.webp'
 import aquaequipos from '@/assets/aquaequipos.webp'
 import vehiculos from '@/assets/vehiculos.webp'
 import movilidad from '@/assets/movilidad.webp'
@@ -85,12 +104,29 @@ export type Project = {
   image: string
   tech: string[]
   summary: string
-  features: { icon: string; text: string }[]
+  features: { icon: LucideIcon; text: string }[]
   detail?: string
   links?: { label: string; href: string }[]
 }
 
 export const projects: Project[] = [
+  {
+    title: 'EcoDama',
+    meta: 'SaaS en producción · Reservas para salones de belleza',
+    image: ecodama,
+    tech: ['Next.js', 'React', 'Tailwind CSS', 'Nginx'],
+    summary:
+      'Plataforma SaaS de citas para salones, spas y profesionales de la belleza. Cada salón obtiene su propia página de reservas, cobra anticipos y gestiona su agenda y clientas desde un panel administrativo.',
+    features: [
+      { icon: CalendarDays, text: 'Calendario inteligente con bloqueos y disponibilidad' },
+      { icon: Link2, text: 'Página de reservas única por salón, optimizada para móvil' },
+      { icon: Landmark, text: 'Anticipos por transferencia con aprobación de comprobantes' },
+      { icon: BarChart3, text: 'Panel con métricas de ingresos, ocupación y retención' },
+    ],
+    detail:
+      'Producto propio, diseñado, desarrollado y desplegado de principio a fin: desde la experiencia de reserva de las clientas hasta el panel de administración y la infraestructura en servidor propio.',
+    links: [{ label: 'Visitar ecodama.online', href: 'https://ecodama.online' }],
+  },
   {
     title: 'Ecommerce Aqua Equipos',
     meta: 'Desarrollo Full Stack · E-commerce',
@@ -99,10 +135,10 @@ export const projects: Project[] = [
     summary:
       'Plataforma de comercio electrónico para Aqua Equipos, especializada en la venta de bombas de agua y productos relacionados. Los clientes exploran el catálogo completo, realizan pedidos y pagan de forma segura.',
     features: [
-      { icon: '🛒', text: 'Carrito de compras y gestión de pedidos' },
-      { icon: '💳', text: 'Pagos con tarjeta de débito/crédito integrados' },
-      { icon: '📦', text: 'Sistema de envíos y seguimiento' },
-      { icon: '📱', text: 'Diseño responsive para todos los dispositivos' },
+      { icon: ShoppingCart, text: 'Carrito de compras y gestión de pedidos' },
+      { icon: CreditCard, text: 'Pagos con tarjeta de débito/crédito integrados' },
+      { icon: Package, text: 'Sistema de envíos y seguimiento' },
+      { icon: Smartphone, text: 'Diseño responsive para todos los dispositivos' },
     ],
     detail:
       'Desarrollé la solución completa desde cero —backend, frontend y base de datos—, implementando pasarelas de pago seguras y optimizando la experiencia de usuario para maximizar conversiones.',
@@ -117,9 +153,9 @@ export const projects: Project[] = [
     summary:
       'Aplicación web colaborativa, desarrollada junto a dos compañeros, para gestionar las solicitudes de vehículos de la universidad usados en viajes académicos, actividades administrativas y eventos especiales.',
     features: [
-      { icon: '🚗', text: 'Gestión de solicitudes de vehículos' },
-      { icon: '📅', text: 'Calendario y programación de reservas' },
-      { icon: '👥', text: 'Panel administrativo multiusuario' },
+      { icon: Car, text: 'Gestión de solicitudes de vehículos' },
+      { icon: CalendarDays, text: 'Calendario y programación de reservas' },
+      { icon: Users, text: 'Panel administrativo multiusuario' },
     ],
     links: [],
   },
@@ -128,7 +164,7 @@ export const projects: Project[] = [
 export type Achievement = {
   title: string
   issuer: string
-  badge: string
+  icon: LucideIcon
   summary: string
   detail: string
   image?: string
@@ -140,7 +176,7 @@ export const achievements: Achievement[] = [
   {
     title: 'Cierre de Pensum — Ingeniería en Ciencias y Sistemas',
     issuer: 'Universidad de San Carlos de Guatemala · CUNORI',
-    badge: '🎓',
+    icon: GraduationCap,
     date: 'Noviembre 2025',
     summary: 'Completé la totalidad de cursos de la carrera de Ingeniería en Ciencias y Sistemas.',
     detail:
@@ -149,7 +185,7 @@ export const achievements: Achievement[] = [
   {
     title: 'Movilidad Académica Internacional',
     issuer: 'USAC · Coordinadora General de Cooperación y Relaciones Internacionales',
-    badge: '🏆',
+    icon: Plane,
     image: movilidad,
     summary: 'Representé a mi universidad en un programa académico de carácter internacional.',
     detail:
@@ -158,7 +194,7 @@ export const achievements: Achievement[] = [
   {
     title: 'Facilitador de Taller de Automatización',
     issuer: 'USAC · Programa de Formación Docente CUNORI',
-    badge: '📜',
+    icon: Workflow,
     image: tallercunori,
     summary: 'Capacité a docentes universitarios en automatizar el envío de diplomas con Google Sheets y Autocrat.',
     detail:
@@ -167,7 +203,7 @@ export const achievements: Achievement[] = [
   {
     title: 'Administrador de Equipos de Red CISCO',
     issuer: 'INTECAP',
-    badge: '🌐',
+    icon: Network,
     image: tecnicointecap,
     summary: 'Formación en gestión, configuración y mantenimiento de infraestructuras de red y telecomunicaciones.',
     detail:
@@ -176,7 +212,7 @@ export const achievements: Achievement[] = [
   {
     title: 'Facilitador en Talleres de Reforzamiento',
     issuer: 'USAC · CUNORI · Plan Trifinio',
-    badge: '👨‍🏫',
+    icon: Presentation,
     image: plantrifinio,
     summary: 'Impartí talleres de matemática, física, lenguaje y química a aspirantes universitarios.',
     detail:
@@ -185,7 +221,7 @@ export const achievements: Achievement[] = [
   {
     title: 'Kotlin Everywhere & Google I/O Extended',
     issuer: 'Comunidades de Desarrolladores · Ecosistema Google',
-    badge: '💻',
+    icon: Smartphone,
     image: kotlin,
     summary: 'Participación en el evento de Kotlin y Google I/O Extended de la región de Oriente.',
     detail:

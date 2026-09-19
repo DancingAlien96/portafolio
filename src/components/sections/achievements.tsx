@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils'
 const spans = ['md:col-span-2', '', '', 'md:col-span-2', 'md:col-span-2', '']
 
 function Header({ item, wide }: { item: Achievement; wide: boolean }) {
+  const Icon = item.icon
   return (
     <div className="relative h-40 w-full overflow-hidden rounded-xl md:h-44">
       {item.image ? (
@@ -25,13 +26,13 @@ function Header({ item, wide }: { item: Achievement; wide: boolean }) {
         />
       ) : (
         <div className="flex size-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgb(87_221_255/0.25),transparent_60%),linear-gradient(135deg,#0f1f33,#0a0e1a)]">
-          <span className="text-6xl drop-shadow-[0_0_24px_rgb(87_221_255/0.5)]">{item.badge}</span>
+          <Icon size={56} strokeWidth={1.4} className="text-accent drop-shadow-[0_0_18px_rgb(87_221_255/0.6)]" />
         </div>
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-bg-0/70 via-transparent to-transparent" />
       {item.image && (
-        <span className="absolute right-3 top-3 flex size-10 items-center justify-center rounded-full bg-amber-300/95 text-xl shadow-[0_4px_12px_rgb(255_215_0/0.35)]">
-          {item.badge}
+        <span className="absolute right-3 top-3 flex size-9 items-center justify-center rounded-full border border-accent/40 bg-bg-0/85 text-accent shadow-[0_0_14px_rgb(87_221_255/0.35)] backdrop-blur">
+          <Icon size={17} />
         </span>
       )}
     </div>
@@ -115,7 +116,7 @@ export function Achievements() {
                   {open.date && ` · ${open.date}`}
                 </div>
                 <h3 id="achievement-title" className="mt-1 text-xl font-semibold text-accent">
-                  {open.badge} {open.title}
+                  {open.title}
                 </h3>
                 <p className="mt-3 leading-[1.8] text-text-soft">{open.summary}</p>
                 <p className="mt-3 leading-[1.8] text-text-soft">{open.detail}</p>

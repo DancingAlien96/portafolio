@@ -19,15 +19,13 @@ function ProjectBody({ project }: { project: Project }) {
       </div>
       <p className="my-3.5 text-[0.95rem] leading-[1.8] text-text-soft">{project.summary}</p>
       <div className="my-5 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-        {project.features.map((f) => (
+        {project.features.map(({ icon: Icon, text }) => (
           <div
-            key={f.text}
+            key={text}
             className="flex items-center gap-2.5 rounded-[10px] border-l-[3px] border-accent/30 bg-white/[0.015] px-3.5 py-3 transition hover:border-accent hover:bg-accent/[0.04]"
           >
-            <span className="shrink-0 text-lg" aria-hidden>
-              {f.icon}
-            </span>
-            <span className="text-[0.88rem] text-text-soft">{f.text}</span>
+            <Icon size={18} className="shrink-0 text-accent" aria-hidden />
+            <span className="text-[0.88rem] text-text-soft">{text}</span>
           </div>
         ))}
       </div>

@@ -1,0 +1,136 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg-0: #0a0e1a;
+  --color-bg-1: #0f1724;
+  --color-accent: #57ddff;
+  --color-accent-2: #7af6ff;
+  --color-muted: #9aa4af;
+  --color-text: #e6eef3;
+  --color-text-soft: #d5e5ed;
+  --color-ink: #042033;
+
+  --font-sans: Inter, ui-sans-serif, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+
+  --animate-float: float 9s ease-in-out infinite;
+  --animate-spin-slow: spin 30s linear infinite;
+  --animate-blink: blink 1s steps(2, start) infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  @keyframes blink {
+    to { visibility: hidden; }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+  }
+  body {
+    @apply bg-bg-0 font-sans text-text antialiased;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: rgb(87 221 255 / 0.3);
+    color: #fff;
+  }
+}
+
+/* ── Fondo de circuitos (migrado del sitio original) ───────────────── */
+.circuit-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 20% 50%, rgb(15 35 60 / 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgb(20 45 70 / 0.3) 0%, transparent 50%),
+    linear-gradient(180deg, #0a0e1a 0%, #0f1724 50%, #0a0e1a 100%);
+}
+.circuit-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgb(87 221 255 / 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: circuit-pulse 8s ease-in-out infinite;
+}
+.circuit-line {
+  position: absolute;
+  background: rgb(87 221 255 / 0.15);
+  height: 1px;
+}
+.circuit-line::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgb(87 221 255 / 0.8), #77eaff, rgb(87 221 255 / 0.8), transparent);
+  box-shadow: 0 0 8px rgb(87 221 255 / 0.6);
+  animation: energy-flow 2s linear infinite;
+  animation-delay: inherit;
+}
+.circuit-line--vertical {
+  width: 1px;
+  height: auto;
+}
+.circuit-line--vertical::after {
+  width: 3px;
+  height: 60px;
+  top: 0;
+  left: -1px;
+  background: linear-gradient(180deg, transparent, rgb(87 221 255 / 0.8), #77eaff, rgb(87 221 255 / 0.8), transparent);
+  animation-name: energy-flow-vertical;
+}
+.circuit-node {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent), 0 0 15px rgb(87 221 255 / 0.4);
+  animation: node-glow 2s ease-in-out infinite;
+}
+
+@keyframes circuit-pulse {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.25; }
+}
+@keyframes node-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+@keyframes energy-flow {
+  0% { left: -60px; opacity: 0; }
+  10%, 90% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+@keyframes energy-flow-vertical {
+  0% { top: -60px; opacity: 0; }
+  10%, 90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Border Beam / Shimmer ─────────────────────────────────────────── */
+@keyframes border-beam {
+  to { offset-distance: 100%; }
+}
+@keyframes shimmer-sweep {
+  0% { transform: translateX(-120%) skewX(-20deg); }
+  60%, 100% { transform: translateX(260%) skewX(-20deg); }
+}

@@ -15,13 +15,17 @@ import {
   ListChecks,
   MessageCircle,
   Globe,
+  HeartPulse,
   GraduationCap,
   Network,
   Package,
+  Pill,
   Plane,
   Presentation,
+  ClipboardList,
   Receipt,
   ShieldCheck,
+  ShoppingBag,
   ShoppingCart,
   SlidersHorizontal,
   Smartphone,
@@ -33,6 +37,8 @@ import terragroup from '@/assets/terragroup.webp'
 import terragroupMobile from '@/assets/terragroup-mobile.webp'
 import campus from '@/assets/campus-carmen-maria.webp'
 import campusMobile from '@/assets/campus-carmen-maria-mobile.webp'
+import farmavida from '@/assets/farmavida.webp'
+import farmavidaMobile from '@/assets/farmavida-mobile.webp'
 import ecodama from '@/assets/ecodama.webp'
 import ecodamaMobile from '@/assets/ecodama-mobile.webp'
 import habitio from '@/assets/habitio.webp'
@@ -239,6 +245,23 @@ export const projects: Project[] = [
       { label: 'Visitar el sitio de la escuela', href: 'https://enfermeriacarmenmaria.edu.gt' },
       { label: 'Ir al campus', href: 'https://admin.enfermeriacarmenmaria.edu.gt/login' },
     ],
+  },
+  {
+    title: 'FarmaVida',
+    meta: 'Sistema privado en producción · Gestión de farmacias',
+    image: farmavida,
+    mobileImage: farmavidaMobile,
+    tech: ['Next.js', 'React', 'Tailwind CSS'],
+    summary:
+      'Sistema de gestión integral para farmacias, pensado para que el equipo dedique menos tiempo a la administración y más al cuidado de sus clientes. Reúne en un solo lugar el inventario, las ventas, las recetas y la relación con cada paciente.',
+    features: [
+      { icon: Pill, text: 'Inventario de medicamentos y productos siempre al día' },
+      { icon: ShoppingBag, text: 'Registro de ventas y seguimiento diario de ingresos' },
+      { icon: ClipboardList, text: 'Control de recetas médicas por paciente' },
+      { icon: HeartPulse, text: 'Programa de fidelización para clientes frecuentes' },
+    ],
+    detail:
+      'Sistema de uso interno con acceso privado, con un panel que resume de un vistazo productos, clientes y ventas del día.',
   },
   {
     title: 'Sistema de Solicitud y Gestión de Vehículos CUNORI',
